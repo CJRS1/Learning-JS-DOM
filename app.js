@@ -5,9 +5,5 @@
 const arrayElement = ['primer elemento', 'segundo elemento','tercer elemento']
 
 arrayElement.forEach(item=>{
-    console.log(item)
-    const li = document.createElement('li')
-    li.textContent = item
-
-    lista.appendChild(li)
+    lista.innerHTML += `<li>${item}</li>`
 }) 
