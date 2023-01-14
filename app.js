@@ -1,18 +1,23 @@
-//Forma adecuada de colocar elementos dentro de una lista en HTML con JS
+const list = document.querySelector('#lista') //Se selecciona el ID de la lista
 
-const arrayElement = ['primer elemento', 'segundo elemento','tercer elemento']
+const arrayLista = ['item 1','item 2','item 3'] //Se crea array
 
-// const fragment = document.createDocumentFragment()
-const fragment = new DocumentFragment()
+const fragment = new DocumentFragment() // Se crea un fragmento
 
-arrayElement.forEach(item=>{
+arrayLista.forEach(item=>{
     const li = document.createElement('li')
-    li.textContent = item
+    li.classList.add('list') //añadir clase
 
-    const childNode = fragment.firstChild
-    console.log(item,childNode)
+    const b = document.createElement('b')
+    b.textContent = 'Nombre:'
 
-    fragment.insertBefore(li,childNode)
+    const span = document.createElement('span')
+    span.classList.add('text-danger')
+    span.textContent = item
+
+    li.appendChild(b) //Se coloca en li
+    li.appendChild(span) //Se coloca en li
+    fragment.appendChild(li) //Se coloca en el fragment
 })
 
-lista.appendChild(fragment)
+list.appendChild(fragment) //Se coloca en la lista
