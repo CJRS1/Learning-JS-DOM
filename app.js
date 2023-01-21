@@ -1,17 +1,32 @@
 const list = document.querySelector('#lista') //Se selecciona el ID de la lista
 
-const arrayLista = ['item 1','item 2','item 3'] //Se crea array
+const arrayLista = [' item 1',' item 2',' item 3'] //Se crea array
 
 //Fragment no acepta INNERHTML
 
-let fragment = ''
+/* const template = document.querySelector('#template').content //Se crea template
+console.log(template)
+const fragment = new DocumentFragment() // Se crea fragment 
+
 arrayLista.forEach(item=>{
-    fragment+=`
-    <li class = "list">
-        <b>Nombre:</b><span class="text-danger">${item}</span>
-    </li>
-    `
+    template.querySelector('.list span').textContent = item // Se modifica el template
+    const clone = template.cloneNode(true) // Se clonan los nodos
+    fragment.appendChild(clone)
+    console.log(item)
 })
 
-lista.innerHTML = fragment
+lista.appendChild(fragment) */
+
+const template = document.querySelector('#template').content
+console.log(template)
+const fragment = new DocumentFragment()
+
+arrayLista.forEach(item=>{
+    template.querySelector('.list span').textContent = item
+    const clone = template.cloneNode(true)
+    fragment.appendChild(clone) 
+    console.log(item)
+
+})
+
 lista.appendChild(fragment)
