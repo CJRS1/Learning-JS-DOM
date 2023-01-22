@@ -23,22 +23,26 @@
     </div>
 
     <script>
-        const btnAumentar = document.querySelector('.btn-info')
-        const span = document.getElementById("span")
-        const btnDisminuir = document.querySelector('.btn-danger')
+        const container = document.querySelector('.container')
+        const span = document.getElementById('span')
         let contador = 0
 
-        btnAumentar.addEventListener('click',()=>{
-            console.log('Me diste click Aumentar')
-            contador++
-            span.textContent = contador
-        })
-
-        
-        btnDisminuir.addEventListener('click',()=>{
-            console.log('Me diste click Dismunuir')
-            contador = contador-1
-            span.textContent = contador
+        container.addEventListener('click', (e)=>{
+            console.log(e.target.classList.contains('btn-info'))
+            if(e.target.classList.contains('btn-info')){
+                contador++
+                span.textContent = contador
+                //console.log(contador)
+            }
+            if(e.target.classList.contains('btn-danger')){
+                contador = contador -1
+                if (contador < 0){
+                    contador = 0
+                }
+                span.textContent = contador
+                console.log(contador)
+                
+            }
         })
     </script>
 </body>
