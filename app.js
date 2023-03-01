@@ -5,6 +5,7 @@ const footer = document.getElementById('footer')
 
 console.log(cards)
 const templateCard = document.getElementById('template-card').content //para acceder a los elementos
+console.log(templateCard)
 const templateFooter = document.getElementById('template-footer').content
 const templateCarrito = document.getElementById('template-carrito').content
 
